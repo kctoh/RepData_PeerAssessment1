@@ -4,7 +4,6 @@ author: "KC Toh"
 date: "6 August 2017"
 output: 
   html_document: 
-    keep_md: yes
 ---
 
 
