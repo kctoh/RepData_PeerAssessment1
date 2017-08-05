@@ -2,18 +2,15 @@
 title: "Reproducible Research Course Project 1"
 author: "KC Toh"
 date: "6 August 2017"
-output: html_document
----
-
-
-
----
-title: "Reproducible Research: Peer Assessment 1"
 output: 
-  html_document:
-    keep_md: true
+  html_document: 
+    keep_md: yes
 ---
 
+
+```r
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 ## Loading and preprocessing the data
 
@@ -37,7 +34,7 @@ names(Totalsteps) <- c("date", "steps")
 hist(Totalsteps$steps, col="cyan", xlab = "Steps", main = "Steps taken each day")
 ```
 
-![plot of chunk mean total number of steps](figure/mean total number of steps-1.png)
+![plot of chunk histogram](figure/histogram-1.png)
 
 ```r
 mean(Totalsteps$steps)
@@ -67,10 +64,15 @@ Dailypattern[2] <- Dailypattern[3]
 names(Dailypattern) <- c("interval", "steps")
 
 plot(Dailypattern$interval, Dailypattern$steps, type = "l", xlab = "interval", ylab = "steps")
+```
+
+![plot of chunk Dailypattern](figure/Dailypattern-1.png)
+
+```r
 lines(Dailypattern$interval, Dailypattern$steps, type = "l")
 ```
 
-![plot of chunk Average daily activity pattern](figure/Average daily activity pattern-1.png)
+![plot of chunk Dailypattern](figure/Dailypattern-2.png)
 
 ```r
 Dailypattern[Dailypattern$steps == max(Dailypattern$steps), ]
@@ -102,7 +104,7 @@ activity2[is.na(activity2)] <- mean(Totalsteps$steps)
 hist(activity2$steps, col="lightblue", xlab = "Steps", main = "Steps taken each day")
 ```
 
-![plot of chunk imputing missing values](figure/imputing missing values-1.png)
+![plot of chunk histogram2](figure/histogram2-1.png)
 
 ```r
 mean(activity2$steps)
@@ -134,4 +136,4 @@ library(lattice)
 xyplot(steps ~ interval | day, data = activity2average, layout = c(1, 2), type = "l")
 ```
 
-![plot of chunk weekdays vs weekends](figure/weekdays vs weekends-1.png)
+![plot of chunk weekdayend](figure/weekdayend-1.png)
