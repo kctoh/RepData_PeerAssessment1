@@ -68,7 +68,7 @@ plot(Dailypattern$interval, Dailypattern$steps, type = "l", xlab = "interval", y
 ![plot of chunk Dailypattern](figure/Dailypattern-1.png)
 
 ```r
-lines(Dailypattern$interval, Dailypattern$steps, type = "l")
+lines(Dailypattern$interval, Dailypattern$steps, type = "l", col="red")
 ```
 
 ![plot of chunk Dailypattern](figure/Dailypattern-2.png)
