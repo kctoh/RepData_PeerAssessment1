@@ -63,15 +63,10 @@ Dailypattern[2] <- Dailypattern[3]
 names(Dailypattern) <- c("interval", "steps")
 
 plot(Dailypattern$interval, Dailypattern$steps, type = "l", xlab = "interval", ylab = "steps")
-```
-
-![plot of chunk Dailypattern](figure/Dailypattern-1.png)
-
-```r
 lines(Dailypattern$interval, Dailypattern$steps, type = "l", col="red")
 ```
 
-![plot of chunk Dailypattern](figure/Dailypattern-2.png)
+![plot of chunk Dailypattern](figure/Dailypattern-1.png)
 
 ```r
 Dailypattern[Dailypattern$steps == max(Dailypattern$steps), ]
